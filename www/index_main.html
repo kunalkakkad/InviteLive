@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+    <!-- cordova js -->
+    <script src="cordova.js"></script>
+
+    <script>
+      function launchARProgrammatically() {
+              CraftARSDK.startView(null, null, {"loadUrl" : "ar_programmatically.html"});
+      };
+      function launchARFromCraftAR() {
+              CraftARSDK.startView(null, null, {"loadUrl" : "ar_from_craftar.html"});
+      };
+      function launchImageRecognition() {
+              CraftARSDK.startView(null, null, {"loadUrl" : "image_recognition.html"});
+      };
+      function launchRSVPInvitation() {
+              //CraftARSDK.startView(null, null, {"loadUrl" : "rsvp_invitation.html"});
+			  var url = 'http://invitelive.com/Rsvp%20Pages/f18f/rsvp.php';
+			  var target = '_blank';
+			  var options = "location = yes"
+			   var ref = cordova.InAppBrowser.open(url, target, options);
+			   
+			   ref.addEventListener('loadstart', loadstartCallback);
+			   ref.addEventListener('loadstop', loadstopCallback);
+			   ref.addEventListener('loadloaderror', loaderrorCallback);
+			   ref.addEventListener('exit', exitCallback);
+
+			   function loadstartCallback(event) {
+				  console.log('Loading started: '  + event.url)
+			   }
+
+			   function loadstopCallback(event) {
+				  console.log('Loading finished: ' + event.url)
+			   }
+
+			   function loaderrorCallback(error) {
+				  console.log('Loading error: ' + error.message)
+			   }
+
+			   function exitCallback() {
+				  console.log('Browser is closed...')
+			   }
+      };
+
+      function onBodyLoad()
+      {         
+         document.addEventListener("deviceready", onDeviceReady, false);
+      };
+
+      function onDeviceReady()
+      {
+        getDeviceProperty();
+      };
+
+      function getDeviceProperty() {
+        var deviceOS  = device.platform;  //fetch the device operating system
+        var deviceOSVersion = device.version;  //fetch the device OS version
+          alert("Device OS: " + deviceOS); 
+          alert("Device OS Version: " + deviceOSVersion); 
+
+
+        if (deviceOS.indexOf('Android') >= 0) {
+          alert("its an android");
+          int = parseInt(deviceOSVersion);
+          alert("apptype = android");
+        }
+        else
+        {
+          alert("apptype = iphone");
+        
+        }                     
+      };
+    </script>
+  </head>
+  <body ng-app="starter" bgcolor="#c6e0a3">
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+      <ion-pane>
+        <ion-content style="background-color:#c6e0a3;">
+
+        <div id="wrapper" style="transform: translateY(-30%); width:100%; margin-top:30%; margin-left:25%;">
+        	<img src="img/logo.png" style="background-repeat:no-repeat; position: absolute; top: 50%; width: 50%; ">
+        </div>
+
+        <div style="position: absolute; margin-top: 60%; transform: translateX(30%) translateY(100%);">
+        	<button style="height:100px; background:none; font-size : 30px; border:none;" onclick="getDeviceProperty();">To Scan Your Invitation Click Here</button>
+          <!-- <button style="height:100px; background:none; font-size : 30px; border:none;" launchARFromCraftAR();onclick="launchARProgrammatically();">To Scan Your Invitation Click Here</button> -->
+        </div>
+      </ion-content>
+
+      <ion-footer-bar>
+        <button class="title" style="background:none; border:none;" onclick="launchRSVPInvitation();">RSVP Invitation</button>
+      </ion-footer-bar>
+    </ion-pane>
+  </body>
+</html>

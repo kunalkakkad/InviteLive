@@ -1,0 +1,40 @@
+#header .cta {
+  display: inline-block;
+  float: right;
+}
+@media (max-width: 480px) {
+  #header .cta {
+    display: none;
+  }
+}
+#header .cta ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#header .cta ul li {
+  margin-left: 20px;
+  display: inline-block;
+}
+#header .cta ul li span {
+  padding: 25px 0;
+  display: inline-block;
+  color: #8db34b;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 480px) {
+  #header .sgn {
+    display: none;
+  }
+}
+.logo{
+	float:left;
+}
+.imgLogo{
+	width:180px;
+	height:50px;
+	margin-top:3px;
+}

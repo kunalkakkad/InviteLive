@@ -1,0 +1,187 @@
+#header .cta {
+  display: inline-block;
+  float: right;
+}
+@media (max-width: 480px) {
+  #header .cta {
+    display: none;
+  }
+}
+#header .cta ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#header .cta ul li {
+  margin-left: 20px;
+  display: inline-block;
+}
+#header .cta ul li.signup a {
+  padding: 10px 25px;
+  background: #8db34b;
+  color: #fff;
+  border-radius: 25px;
+}
+#header .cta ul li.signup a:hover {
+  background: #90c03e;
+  color: #fff;
+}
+#header .cta ul li a {
+  padding: 25px 0;
+  display: inline-block;
+  color: #666;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+#header .cta ul li a:hover {
+  color: #8db34b;
+}
+#banner.banner {
+  position: relative;
+  padding: 30px 0 120px 0;
+  margin-top: 70px;
+  background: #333333 url(../images/bg.jpg) no-repeat center;
+  background-size: cover;
+}
+#banner.banner #gradient {
+  background: rgba(0, 0, 0, 0.46);
+}
+#banner.banner h2 {
+  padding-right: 60px;
+  margin-bottom: 26px;
+  font-size: 48px;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+#banner.banner p {
+  padding-right: 120px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+#banner.banner .form {
+  position: relative;
+}
+#banner.banner .form input {
+  padding: 5px 15px;
+  width: 203px;
+  display: inline-block;
+  height: 40px;
+/*  background: #fff;
+  border-radius: 3px;
+  border: none;*/
+}
+@media (max-width: 768px) {
+  #banner.banner .form input {
+    width: 180px;
+  }
+}
+@media (max-width: 520px) {
+  #banner.banner .form input {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+#banner.banner .form button {
+  margin-left: 1px;
+  padding: 10px 25px;
+  background: #8db34b;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  height: 40px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+#banner.banner .form button:hover {
+  background: #90c03e;
+}
+@media (max-width: 520px) {
+  #banner.banner .form button {
+    width: 100%;
+  }
+}
+#banner.banner .declaration {
+  margin-top: 15px;
+  display: block;
+  color: #fff;
+  opacity: .8;
+  font-size: 13px;
+}
+form li{
+	border: 1px solid #ebebeb;
+	list-style: none;
+	margin-bottom: 25px;
+	width: 60%;
+	background: none;
+}
+input[type="text"], input[type="password"] {
+	width: 100% !important;
+	padding: 1em 0em 1em 0.5em;
+	color: #C9C9C9;
+	font-size: 18px;
+	outline: none;
+	background: none;
+	border: 1px solid #8db34b;
+	font-weight: 100;
+}
+input[type="submit"]{
+	font-size: 20px;
+	display: inline-block;
+	font-weight: 100;
+	color: #fff;
+	transition: 0.1s all;
+	-webkit-transition: 0.1s all;
+	-moz-transition: 0.1s all;
+	-o-transition: 0.1s all;
+	cursor: pointer;
+	outline: none;
+	padding: 6px 6px;
+	font-family: 'Open Sans', sans-serif;
+	width:120px !important;
+	border-radius: 25px;
+	background: #8db34b;
+	margin-bottom: 0.5em;
+}
+input[type="submit"]:hover {
+  border-radius: 25px;
+	background: #8db34b;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	-o-border-radius: 25px;
+	-ms-border-radius: 25px;
+		transition: 0.1s all;
+	-webkit-transition: 0.1s all;
+	-moz-transition: 0.1s all;
+	-o-transition: 0.1s all;
+  width:120px !important;
+}
+.response-input {
+  padding-top:2%;
+  width:70%;
+}
+.response-input input{
+  height:40px;
+}
+.login-btn{
+	width:100%;
+}
+h1{
+	color: #90c03e;	
+}
+.input-group{
+	padding-bottom:10px;
+}
+.error{
+	color:red;
+	height:20px;
+}
+.logo{
+	float:left;
+}
+.imgLogo{
+	width:180px;
+	height:50px;
+	margin-top:3px;
+}

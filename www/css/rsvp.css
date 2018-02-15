@@ -1,0 +1,108 @@
+#header .cta {
+  display: inline-block;
+  float: right;
+}
+
+#header .cta ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#header .cta ul li {
+  margin-left: 20px;
+  display: inline-block;
+}
+#header .cta ul li span {
+  padding: 25px 0;
+  display: inline-block;
+  color: #8db34b;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+@media(max-width:550px){	
+	.imgLogo{
+		width:70% !important;
+		/*height:17% !important;	*/
+		margin:3% 10%;		
+  }
+}
+
+#banner.banner {
+  position: relative; 
+  background-size: cover;
+  margin-bottom:10px;
+}
+.response-input {
+  padding-top:2%;
+}
+.response-input input{
+  height:40px;
+}
+
+.rsvp-btn{
+	width: 100%;
+    margin-top: 10px;
+    margin-left: 1px;
+    padding: 10px 25px;
+    background: #8db34b;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    height: 40px;
+    text-transform: uppercase;
+    font-size: 14px
+}
+
+.rsvp-panel-wrapper{
+	margin:auto;
+	width:40%;
+}
+
+@media(max-width:480px){
+	.rsvp-panel-wrapper{
+		margin:auto;
+		width:100%;
+    }
+}
+@media only screen and (max-width: 650px) and (min-width: 480px) 
+{
+	.rsvp-panel-wrapper{
+		margin:auto;
+		width:80%;
+    }
+}
+@media only screen and (max-width: 1000px) and (min-width: 650px) 
+{
+	.rsvp-panel-wrapper{
+		margin:auto;
+		width:60%;
+    }
+}
+
+
+.carousel-inner img{
+	margin-left:30px;
+	width:1275px;
+	border:1px solid #8db34b;
+}
+.error{
+	color:red;
+	height:20px;	
+}
+.success{
+	color:green;
+	height:20px;
+	margin-top: 10px;
+}
+.mainErr{
+	margin-top: 10px;
+}
+.logo{
+	float:left;
+}
+.imgLogo{
+	width:180px;
+	height:50px;
+	margin-top:3px;
+}

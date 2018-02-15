@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="cordova.js"></script>
+
+        <script>
+            function didGetResults(results) {
+                if(results.length > 0) {
+                    var item = results[0].item;
+                    //alert("Found Item")
+                    if (item.isAR) {
+                       //alert("Getting AR")
+                        CraftARContent.createVideoContentWithPath("video.mp4", function(contentVideo){
+                                video = contentVideo;
+                                contentVideo.wrapMode = CraftARContent.CRAFTAR_TRACKING_WRAP_ASPECT_FIT;
+                                contentVideo.attachTo(item);
+                                CraftARTracking.addItem(item, function(){
+                                    CraftARTracking.startTracking();
+                                },function(err) {
+                                    alert("Error adding AR item: " + err.errorMessage);
+                                    CraftARSDK.startFinder();
+                                });
+                            });
+                      // CraftARContent.createImageContentWithPath("ar_content.png", function(contentImage){
+                        //     contentImage.wrapMode = CraftARContent.CRAFTAR_TRACKING_WRAP_ASPECT_FIT;
+                          //  contentImage.attachTo(item);
+                            //CraftARTracking.addItem(item, function(){
+                              //  CraftARTracking.startTracking();
+                            //},function(err) {
+                             //   alert("Error adding AR item: " + err.errorMessage);
+                               // CraftARSDK.startFinder();
+                            //});
+                        //});
+                    } else {
+                        CraftARSDK.startFinder();
+                    }
+
+                }
+            }
+
+            function onError(error) {
+                // Search errors are reported here, we usually don't want to stop the finder mode
+            }
+
+            function didStartCapture() {
+               CraftARSDK.searchController = CraftARCloudRecognition.searchController;
+               CraftARCloudRecognition.onSearchResults(didGetResults);
+               CraftARCloudRecognition.onSearchError(onError); //f5528ea9fa5f4950
+               CraftARCloudRecognition.setCollectionWithToken("78e3c9fb77f94d23", function() { //78e3c9fb77f94d23
+                    CraftARSDK.startFinder();
+               }, function(err) {
+                    alert("Error setting token: " + err.errorMessage);
+               });                 
+            }
+
+            function didGetTouchEvent(touch) {
+                var event = touch.event;
+                var content = touch.content;
+                switch (event) {
+                    case CraftARTouch.CRAFTAR_CONTENT_TOUCH_IN:
+                        console.log("Touch in: " + content.uuid);
+                       // alert("Touch");
+                        // Define a div tag with id="map_canvas"
+                        break;
+                    case CraftARTouch.CRAFTAR_CONTENT_TOUCH_OUT:
+                        console.log("Touch out: " + content.uuid);
+                        break;
+                    case CraftARTouch.CRAFTAR_CONTENT_TOUCH_UP:
+                        console.log("Touch up: " + content.uuid);
+                        CraftARTracking.stopTracking();
+                        //CraftARSDK.startView(null, null, {"loadUrl" : "rsvp_invitation.html"});
+                        launchRSVPInvitation();
+                        break;
+                    case CraftARTouch.CRAFTAR_CONTENT_TOUCH_DOWN:
+                        console.log("Touch down: " + content.uuid);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            function didStartTrackingItem(item) {
+                console.log("Start tracking Item: " + item.uuid);
+            }
+
+
+            function didStopTrackingItem(item) {
+                console.log("Stop tracking item: " + item.uuid);
+            }
+
+
+            function didTrackingTimeout() {
+                alert("Tracking timeout");
+            }
+
+            function startCraftAR() 
+            {
+               CraftARTouch.onTouchEvent(didGetTouchEvent);
+
+               CraftARTracking.onStartTracking(didStartTrackingItem);  
+               CraftARTracking.onStopTracking(didStopTrackingItem);
+               CraftARTracking.onTrackingTimeOut(didTrackingTimeout);
+
+               CraftARSDK.onStartCapture(didStartCapture); 
+               CraftARSDK.startCapture();
+            }
+
+            document.addEventListener("deviceready", function() {
+                startCraftAR();
+            }, false);
+
+            function launchMainPage() {
+              CraftARSDK.startView(null, null, {"loadUrl" : "index.html"});
+            };
+
+            function launchRSVPInvitation() {
+              CraftARSDK.startView(null, null, {"loadUrl" : "rsvp_invitation.html"});
+              /*var url = 'http://invitelive.com/Rsvp%20Pages/f18f/rsvp.php';
+              var target = '_blank';
+              var options = "location = yes"
+              var ref = cordova.InAppBrowser.open(url, target, options);
+         
+              ref.addEventListener('loadstart', loadstartCallback);
+              ref.addEventListener('loadstop', loadstopCallback);
+              ref.addEventListener('loadloaderror', loaderrorCallback);
+              ref.addEventListener('exit', exitCallback);
+
+              function loadstartCallback(event) {
+                console.log('Loading started: '  + event.url)
+              }
+
+              function loadstopCallback(event) {
+                console.log('Loading finished: ' + event.url)
+              }
+
+              function loaderrorCallback(error) {
+                console.log('Loading error: ' + error.message)
+              }
+
+              function exitCallback() {
+                loadMainPage();
+                console.log('Browser is closed...')
+              }*/
+
+          };
+
+		</script>
+		
+    </head>
+    <body>
+       <h1 id="progress"></h1>
+        <div id="map_canvas">
+        </div>
+    </body>
+</html>

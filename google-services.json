@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "262274472025",
+    "firebase_url": "https://test-invitelive.firebaseio.com",
+    "project_id": "test-invitelive",
+    "storage_bucket": "test-invitelive.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262274472025:android:485ac94be13a2397",
+        "android_client_info": {
+          "package_name": "com.wedding.invitelive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262274472025-754ota4jotgj7bb3tfbmds4a35ds98u4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUH21gatdphB6Kr_t4DMz9wtWWHKoAhek"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

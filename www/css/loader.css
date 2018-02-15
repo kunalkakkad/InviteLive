@@ -1,0 +1,22 @@
+#spinner {
+    background: url('../img/spinner.gif') no-repeat center center;
+    cursor: wait;
+    color: #414C55;
+    font: 20px/24px 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+    -webkit-box-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    -webkit-transition: 200ms opacity;
+    background-color: rgba(255, 255, 255, 0.75);
+    bottom: 0;
+    display: -webkit-box;
+    left: 0;
+    overflow: auto;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    vertical-align: central;
+    font-size: 13px;
+    z-index: 9999;
+}

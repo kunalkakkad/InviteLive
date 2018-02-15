@@ -1,0 +1,31 @@
+{
+  "name": "com.wedding.invitelive",
+  "version": "1.0.0",
+  "displayName": "InviteLive",
+  "cordova": {
+    "platforms": [
+      "browser",
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "com-sarriaroman-photoviewer": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-firebase": {},
+      "cordova-plugin-exoplayer": {},
+      "com.moust.cordova.videoplayer": {}
+    }
+  },
+  "dependencies": {
+    "com-sarriaroman-photoviewer": "^1.1.11",
+    "com.moust.cordova.videoplayer": "~1.0.1",
+    "cordova-android": "^6.3.0",
+    "cordova-browser": "^5.0.3",
+    "cordova-ios": "~4.3.1",
+    "cordova-plugin-device": "^2.0.1",
+    "cordova-plugin-exoplayer": "^2.5.3",
+    "cordova-plugin-firebase": "^0.1.25",
+    "cordova-plugin-streaming-media": "^1.0.2",
+    "cordova-plugin-whitelist": "1"
+  }
+}

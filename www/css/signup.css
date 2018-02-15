@@ -1,0 +1,91 @@
+#header .cta {
+  display: inline-block;
+  float: right;
+}
+@media (max-width: 480px) {
+  #header .cta {
+    display: none;
+  }
+}
+#header .cta ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#header .cta ul li {
+  margin-left: 20px;
+  display: inline-block;
+}
+#header .cta ul li.signup a {
+  padding: 10px 25px;
+  background: #8db34b;
+  color: #fff;
+  border-radius: 25px;
+}
+#header .cta ul li.signup a:hover {
+  background: #90c03e;
+  color: #fff;
+}
+#header .cta ul li a {
+  padding: 25px 0;
+  display: inline-block;
+  color: #666;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+#header .cta ul li a:hover {
+  color: #8db34b;
+}
+.response-input {
+  padding-top:2%;
+}
+.response-input input{
+  height:40px;
+}
+
+#form button{
+	width:100%;
+	margin-top:20px;
+	margin-left: 1px;
+    padding: 10px 25px;
+    background: #8db34b;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    height: 40px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+#form button:hover{	
+  background: #90c03e;
+  color: #fff;
+}
+.signup-panel-wrapper{
+	margin:auto;
+	width:35%;
+}
+
+.response{
+	margin-top:10%;
+}
+.error{
+	color:red;
+	height:20px;
+}
+h1{
+	color: #90c03e;	
+	text-align: center;
+}
+.btn-row{
+	padding-top:0%;
+}
+.logo{
+	float:left;
+}
+.imgLogo{
+	width:180px;
+	height:50px;
+	margin-top:3px;
+}
