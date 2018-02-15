@@ -1,0 +1,27 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.catchoom.craftar": {
+      "PACKAGE_NAME": "com.wedding.invitelive"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.wedding.invitelive"
+    },
+    "com-sarriaroman-photoviewer": {
+      "PACKAGE_NAME": "com.wedding.invitelive"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.wedding.invitelive"
+    },
+    "cordova-plugin-exoplayer": {
+      "PACKAGE_NAME": "com.wedding.invitelive"
+    }
+  },
+  "dependent_plugins": {}
+}
